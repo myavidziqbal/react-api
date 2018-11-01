@@ -24,14 +24,19 @@ import TodoDetail from "./TodoDetail"
 
 const Header = (props) => {
   return (
-  <div>
-    {/* { props.todos.length !== 0 && props.todos[0].description} */}
+    <div>
+      {/* { props.todos.length !== 0 && props.todos[0].description} */}
 
-    {props.todos.map(todo =>
-      <TodoDetail description={todo.description} done={todo.done} />
-    )}
+      <input type="text" name='inputDescription' value={props.inputDescription}
+        onChange={props.handleOfChange} />
 
-  </div>);
+      <button onClick={props.submitButton}>ADD</button>
+
+      {props.todos.map(todo =>
+        <TodoDetail description={todo.description} done={todo.done} />
+      )}
+
+    </div>);
 }
 
 export default Header;
